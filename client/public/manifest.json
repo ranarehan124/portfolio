@@ -1,0 +1,29 @@
+{
+  "name": "Rehan Tahir Portfolio",
+  "short_name": "Rehan Tahir",
+  "description": "Portfolio website of Rehan Tahir — Full-Stack Developer & Creative Technologist",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "personal", "developer"],
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_colors": {
+    "primary": "#8b5cf6",
+    "background": "#0a0a0f",
+    "surface": "#12121a",
+    "text": "#e2e8f0",
+    "accent": "#a78bfa"
+  }
+}

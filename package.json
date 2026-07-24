@@ -1,0 +1,33 @@
+{
+  "name": "rehan-tahir-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Premium portfolio website for Rehan Tahir — Creative Frontend Developer & AI Builder",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "build:client": "npm run build --workspace=client",
+    "build:server": "npm run build --workspace=server",
+    "build": "npm run build:client && npm run build:server",
+    "start:server": "npm run start --workspace=server",
+    "lint": "npm run lint --workspace=client && npm run lint --workspace=server",
+    "format": "npm run format --workspace=client && npm run format --workspace=server",
+    "clean": "rimraf client/dist server/dist client/tsconfig.tsbuildinfo"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "rimraf": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7"
+  }
+}

@@ -1,0 +1,326 @@
+/* ─── Section Shared ─────────────────────────────────────── */
+
+.section-divider {
+  position: relative;
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+}
+
+/* ─── Timeline ──────────────────────────────────────────── */
+
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(139, 92, 246, 0.3) 10%,
+    rgba(139, 92, 246, 0.3) 90%,
+    transparent
+  );
+}
+
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 20px;
+  top: 28px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  border: 2px solid #0a0a0a;
+  transform: translateX(-50%);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .timeline-dot {
+    left: 50%;
+  }
+}
+
+/* ─── Skill Card Glow ───────────────────────────────────── */
+
+.skill-card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0),
+    rgba(139, 92, 246, 0.3),
+    rgba(96, 165, 250, 0.3),
+    rgba(96, 165, 250, 0)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.skill-card-glow:hover::before {
+  opacity: 1;
+}
+
+/* ─── Project Card ──────────────────────────────────────── */
+
+.project-card-image {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+/* ─── Service Card Border ───────────────────────────────── */
+
+.service-card-border {
+  position: relative;
+}
+
+.service-card-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(139, 92, 246, 0),
+    rgba(139, 92, 246, 0.4),
+    rgba(96, 165, 250, 0.4),
+    rgba(96, 165, 250, 0)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.service-card-border:hover::before {
+  opacity: 1;
+}
+
+/* ─── Floating Info Card ────────────────────────────────── */
+
+@keyframes float-card {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  75% {
+    transform: translateY(4px) rotate(-0.5deg);
+  }
+}
+
+.floating-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.floating-card-delayed {
+  animation: float-card 7s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+/* ─── Stat Counter ──────────────────────────────────────── */
+
+.stat-value {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Category Tab Active ───────────────────────────────── */
+
+.category-tab-active {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+}
+
+/* ─── Tilt Reset ────────────────────────────────────────── */
+
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(139, 92, 246, 0.08);
+}
+
+/* ─── Physics Section ───────────────────────────────────── */
+
+.physics-canvas-wrapper {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.physics-canvas-wrapper canvas {
+  cursor: grab;
+}
+
+.physics-canvas-wrapper canvas:active {
+  cursor: grabbing;
+}
+
+/* ─── Contact Form ──────────────────────────────────────── */
+
+.contact-input:focus {
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.08),
+    0 0 20px rgba(139, 92, 246, 0.06);
+}
+
+.contact-input.error {
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.contact-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.08);
+}
+
+@keyframes success-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
+  }
+}
+
+.success-pulse {
+  animation: success-pulse 2s ease-in-out infinite;
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+
+.footer-gradient-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.2) 30%,
+    rgba(96, 165, 250, 0.15) 70%,
+    transparent
+  );
+}
+
+@keyframes logo-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.45),
+      0 0 60px rgba(139, 92, 246, 0.15);
+  }
+}
+
+.footer-logo-glow {
+  animation: logo-glow 4s ease-in-out infinite;
+}
+
+@keyframes back-to-top-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.back-to-top-enter {
+  animation: back-to-top-appear 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── GSAP Global Scroll Animations ─────────────────────── */
+
+.gsap-reveal {
+  visibility: hidden;
+}
+
+.gsap-reveal.revealed {
+  visibility: visible;
+}
+
+/* ─── Loading Skeleton ──────────────────────────────────── */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.skeleton-text-sm {
+  height: 0.75em;
+  margin-bottom: 0.5em;
+  width: 80%;
+}
+
+.skeleton-heading {
+  height: 1.5em;
+  margin-bottom: 0.5em;
+  width: 60%;
+}
+
+.skeleton-card {
+  height: 200px;
+  border-radius: 1rem;
+}

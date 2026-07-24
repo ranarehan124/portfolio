@@ -1,0 +1,12 @@
+/* TEAM */
+Name: Rehan Tahir
+Role: Full-Stack Developer & Creative Technologist
+Site: https://ranarehan124.github.io/portfolio/
+Location: Earth
+Contact: mt858625@gmail.com
+
+/* SITE */
+Last update: 2025/01/01
+Standards: HTML5, CSS3, TypeScript, React
+Components: Vite, Three.js, Tailwind CSS, Express, MongoDB
+Software: VS Code, Figma
